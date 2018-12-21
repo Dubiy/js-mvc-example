@@ -62,7 +62,7 @@ MVC.Model = function () {
             return;
         }
 
-        items.splice(model.currentIndex, 1);
+        items.splice(currentIndex, 1);
         saveData();
         //TODO send notify
         model.modelChangedSubject.notify();
@@ -75,7 +75,7 @@ MVC.Model = function () {
     this.setCurrentIndex = function (value) {
         currentIndex = value;
         //TODO send notify
-        // model.modelChangedSubject.notify();
+        model.modelChangedSubject.notify();
     };
 
     function saveData() {
@@ -100,7 +100,6 @@ MVC.View = function (model, rootObj) {
     // option = document.createElement("option");
     // option.text = "Kiwi2";
     // view.select.add(option);
-
 
     rootObj.appendChild(view.select);
 
