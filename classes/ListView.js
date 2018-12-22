@@ -18,6 +18,15 @@ class ListView extends EventEmitter {
         this.model.on('done', item => {
             this.checkItem(item);
         });
+
+
+
+
+        this.on('itemDeleteClick', item => {
+            alert(`Item ${item.text} deleted`);
+        });
+
+
     }
 
     rebuildList() {
@@ -58,6 +67,8 @@ class ListView extends EventEmitter {
 
         return li;
     }
+
+
 
     removeItem(item) {
         [].forEach.call(this.listRef.childNodes, element => {

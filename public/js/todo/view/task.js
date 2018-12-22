@@ -6,8 +6,6 @@ function taskView(rootElement, tasks, actions) {
         <input type="checkbox" class="done">
         <span class="text"></span>
         <button class="delete">Delete</button>
-        <button class="move-up">Up</button>
-        <button class="move-down">Down</button>
     `;
 
     tasks.forEach(function(task) {

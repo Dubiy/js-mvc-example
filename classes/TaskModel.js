@@ -9,8 +9,15 @@ class TaskModel extends EventEmitter{
     }
 
     add(...items) {
-        this.items.push(...items);
-        this.emit('add', items);
+        items.forEach(text => {
+            let item = {
+                text,
+                done: false
+            };
+            this.items.push(item);
+            this.emit('add', item);
+        });
+
     }
 
     remove(...items) {

@@ -13,7 +13,7 @@ header {
     padding: 10px;
 }
 
-#todo-list {
+#todo-list, #todo-list2 {
     width: 40%;
     margin: 200px auto 0;
     border: 1px solid #ccc;
@@ -21,17 +21,17 @@ header {
     padding: 10px;
 }
 
-#todo-list ul {
+#todo-list ul, #todo-list2 ul {
     padding: 0;
 }
 
-#todo-list li {
+#todo-list li, #todo-list2 li {
     display: block;
     height: 30px;
     font-size: 20px;
     font-family: Verdana;
 }
 
-#todo-list li button {
+#todo-list li button, #todo-list2 li button {
     float: right;
 }
