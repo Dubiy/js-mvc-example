@@ -29,14 +29,6 @@ MVC.ObservableSubject = function () {
     };
 };
 
-
-
-
-
-
-
-
-
 MVC.Model = function () {
     var model = this,
         items = [],
@@ -58,7 +50,7 @@ MVC.Model = function () {
     };
 
     this.removeCurrentItem = function () {
-        if (currentIndex === undefined) {
+        if (currentIndex !== -1) {
             return;
         }
 
@@ -117,9 +109,10 @@ MVC.View = function (model, rootObj) {
         console.log(view.select.childNodes);
         // return;
 
-        for (var i = 0; view.select.childNodes.length; i++) {
-            view.select.childNodes[0].remove();
-        }
+        view.select.innerHTML = '';
+        // for (var i = 0; view.select.childNodes.length; i++) {
+        //     view.select.childNodes[0].remove();
+        // }
 
         items.forEach(function (el) {
             var option = document.createElement('option');
@@ -128,8 +121,6 @@ MVC.View = function (model, rootObj) {
         });
     });
 };
-
-
 
 MVC.Controller = function (model, view) {
     view.addBtn.addEventListener('click', function () {
@@ -147,7 +138,6 @@ MVC.Controller = function (model, view) {
 
     model.modelChangedSubject.notify();
 };
-
 
 window.addEventListener('load', function () {
     var model = new MVC.Model();
