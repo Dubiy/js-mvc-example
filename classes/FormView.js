@@ -20,7 +20,7 @@ class FormView extends EventEmitter {
             let value = form.text.value.trim();
             if (value) {
                 this.emit('formSubmit', {
-                    value: value
+                    value
                 });
                 form.text.value = '';
             }

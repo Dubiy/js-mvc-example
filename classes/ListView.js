@@ -82,6 +82,7 @@ class ListView extends EventEmitter {
         [].forEach.call(this.listRef.childNodes, element => {
             if (element.task === item) {
                 element.querySelector('input').checked = item.done;
+                element.classList.toggle('done');
             }
         })
     }
